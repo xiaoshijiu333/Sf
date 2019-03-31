@@ -1,0 +1,170 @@
+.center {
+    margin: 110px auto 0;
+    width: 1045px;
+    overflow: hidden;
+}
+
+.center .center_top {
+    height: 50px;
+    border-bottom: 2px solid #BBBBBB;
+}
+
+.center .center_top p {
+    float: left;
+    font-size: 26px;
+    color: #433D57;
+}
+
+.center .center_top form {
+    float: right;
+}
+
+.center_top input {
+    border-radius: 5px;
+    width: 200px;
+    height: 25px;
+    border: 1px solid #BBBBBB;
+    outline: none;
+    text-indent: 9px;
+}
+
+.center_top img {
+    height: 20px;
+    width: 20px;
+    margin-left: 15px;
+}
+
+.center .center_left {
+    float: left;
+    margin-left: -55px;
+    position: relative;
+    width: 300px;
+    margin-top: 20px;
+    height: 720px;
+}
+
+.center .center_right {
+    float: left;
+    width: 760px;
+    margin-left: 40px;
+    position: relative;
+}
+
+.center_right h3 {
+    font-size: 16px;
+    color: #151515;
+}
+
+.center_right .right_top {
+    margin-top: 5px;
+    float: left;
+    width: 200px;
+}
+
+.right_top .left_bottom {
+    margin-top: 10px;
+    border-bottom: 1.5px solid #BBBBBB;
+    width: 150px;
+    height: 35px;
+}
+
+.left_bottom .mes1 {
+    height: 23px;
+    width: 23px;
+    margin-left: 15px;
+    margin-top: -4px;
+}
+
+.left_bottom .mes2 {
+    height: 20px;
+    width: 20px;
+    margin-top: -4px;
+    margin-left: 10px;
+}
+
+.right_top .codeuserimg {
+    width: 150px;
+    height: 150px;
+}
+
+.center_right .right_context {
+    float: left;
+    margin-left: 15px;
+    background: #F7F0E4;
+    width: 540px;
+    height: 160px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border: 2px solid #BBBBBB;
+}
+
+.center_right .leftpic {
+    float: left;
+    height: 30px;
+    width: 30px;
+    margin-top: 10px;
+    margin-left: 7px;
+}
+
+.center_right .rightpic {
+    float: right;
+    height: 30px;
+    width: 30px;
+    margin-top: 10px;
+    margin-right: -5px;
+}
+
+.center_right .leftpic2 {
+    margin-top: 20px;
+    width: 40px;
+    height: 40px;
+    float: left;
+}
+
+.center_right .rightpic2 {
+    float: right;
+    height: 40px;
+    width: 40px;
+    margin-top: -66px;
+}
+
+.center_right .otherimg {
+    width: 80px;
+    height: 80px;
+    margin-left: 30px;
+}
+
+.right_context ul {
+    list-style: none;
+}
+
+.right_context .message {
+    padding-top: 10px;
+    width: 540px;
+}
+
+.message img {
+    margin-left: 8px;
+    width: 30px;
+    border-radius: 70%;
+    height: 30px;
+}
+
+.message span {
+    padding: 0px 5px;
+    border: 1px solid #464F87;
+    border-radius: 10px;
+    margin-left: 10px;
+    font-size: 15px;
+}
+
+.message p {
+    display: inline-block;
+    color: #585656;
+    font-size: 13px;
+}
+.center_right .messagetime{
+    position: absolute;
+    bottom: -5px;
+    left: 410px;
+}

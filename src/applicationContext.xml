@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx.xsd
+">
+    <!--开启注解注入属性-->
+    <context:annotation-config/>
+
+    <!--引入数据库配置文件-->
+    <import resource="hibernateapplication.xml"></import>
+
+    <!--模型交给Spring管理-->
+    <bean id="user" class="model.User"></bean>
+    <bean id="codeModule" class="model.CodeModule"></bean>
+    <bean id="pageBean" class="model.PageBean"></bean>
+    <bean id="orderModule" class="model.OrderModule"></bean>
+    <bean id="likeCode" class="model.LikeCode"></bean>
+    <bean id="message" class="model.Message"></bean>
+
+    <!-- 管理struts2的action对象，scope="prototype"表示多例 -->
+    <bean class="action.SFAction" id="sfAction" scope="prototype"></bean>
+    <bean class="action.UserAction" id="userAction" scope="prototype"></bean>
+    <bean class="action.CodeAction" id="codeAction" scope="prototype"></bean>
+    <bean class="action.OrderAction" id="orderAction" scope="prototype"></bean>
+
+    <!-- Dao配置 -->
+    <bean id="userDao" class="dao.UserDao">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    <bean id="codeDao" class="dao.CodeDao">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+
+    <!-- Service配置 -->
+    <bean id="userService" class="service.UserService"></bean>
+    <bean id="codeService" class="service.CodeService"></bean>
+
+</beans>

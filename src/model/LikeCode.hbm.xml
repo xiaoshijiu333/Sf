@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- 数据库表与实体类的映射配置 -->
+<hibernate-mapping>
+    <!-- name:实体类的全路径；table:数据库中的表名 -->
+    <class name="model.LikeCode" table="likeCode">
+        <!-- id：主键，property：一般属性
+            name：实体类中的属性名；column：数据库表的字段名，若不配置则默认与属性名相同 -->
+        <id name="id" column="id">
+            <!-- 主键自增策略 -->
+            <generator class="native"></generator>
+        </id>
+        <property name="user_id" column="user_id"></property>
+        <property name="liketime" column="liketime"></property>
+        <!--外键多对一-->
+        <many-to-one name="codeModule" class="model.CodeModule" column="module_id" lazy="false"></many-to-one>
+    </class>
+</hibernate-mapping>

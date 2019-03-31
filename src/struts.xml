@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+
+
+    <package name="struts" extends="struts-default">
+
+        <!--配置拦截器-->
+        <interceptors>
+            <interceptor name="loginInterceptor" class="action.Interceptor.LoginInterceptor"/>
+        </interceptors>
+
+        <action name="sf_*" class="sfAction" method="{1}">
+            <!--引用拦截器-->
+            <interceptor-ref name="loginInterceptor">
+                <!--拦截的方法-->
+                <param name="includeMethods">aq,contact</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+
+            <result name="success" type="redirect">login.html</result>
+            <result name="aq">WEB-INF/jsp/AQ.jsp</result>
+            <result name="contact">WEB-INF/jsp/contact.jsp</result>
+            <allowed-methods>login,register,OneUname,aq,contact</allowed-methods>
+        </action>
+
+        <action name="user_*" class="userAction" method="{1}">
+            <!--引用拦截器-->
+            <interceptor-ref name="loginInterceptor">
+                <!--拦截的方法-->
+                <param name="includeMethods">UserPicture,update,loginOut,SendMessage,QueryMessage
+                ,ToMessage,OneMessage,Mespic,threeMessage,search</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+
+            <result name="update" type="redirectAction">code_myModule.action</result>
+            <result name="loginOut" type="redirect">index.html</result>
+            <result name="ToMessage">WEB-INF/jsp/message.jsp</result>
+            <result name="threeMessage">WEB-INF/jsp/recordmes.jsp</result>
+            <allowed-methods>UserPicture,update,loginOut,SendMessage,QueryMessage,ToMessage,OneMessage
+            ,Mespic,threeMessage,search</allowed-methods>
+        </action>
+
+        <action name="code_*" class="codeAction" method="{1}">
+            <!--引用拦截器-->
+            <interceptor-ref name="loginInterceptor">
+                <!--拦截的方法-->
+                <param name="includeMethods">Creatrep,Saverep,CreatCode,SaveCodeModule,myModule,deleteCode
+                    ,ModifyCode,ModifyCodeModule,ViewCode,otherModule,project</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+
+            <result name="Creatrep">WEB-INF/jsp/repertorie.jsp</result>
+            <result name="Saverep" type="redirectAction">code_project.action</result>
+            <result name="CreatCode">WEB-INF/jsp/upload.jsp</result>
+            <result name="SaveCodeModule" type="redirectAction">code_myModule.action</result>
+            <result name="myModule">WEB-INF/jsp/myModule.jsp</result>
+            <result name="deleteCode" type="redirectAction">code_myModule.action</result>
+            <result name="ModifyCode">WEB-INF/jsp/modify.jsp</result>
+            <result name="ModifyCodeModule" type="redirectAction">code_myModule.action</result>
+            <result name="ViewCode">WEB-INF/jsp/CodeDetail.jsp</result>
+            <result name="market">WEB-INF/jsp/market.jsp</result>
+            <result name="CodeDetail">WEB-INF/jsp/MarketDetail.jsp</result>
+            <result name="otherModule">WEB-INF/jsp/OtherModule.jsp</result>
+            <result name="project">WEB-INF/jsp/Project.jsp</result>
+            <allowed-methods>Creatrep,Saverep,CreatCode,SaveCodeModule,myModule,deleteCode
+            ,ModifyCode,ModifyCodeModule,ViewCode,market,CodeDetail,otherModule,project</allowed-methods>
+        </action>
+
+        <action name="order_*" class="orderAction" method="{1}">
+            <!--引用拦截器-->
+            <interceptor-ref name="loginInterceptor">
+                <!--拦截的方法-->
+                <param name="includeMethods">buyCode,ToBuy,BuyModule,IsBuy,AddLikeCode,likeCode,IsLike,DeleteLikeCode</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+
+            <result name="ToBuy">WEB-INF/jsp/order.jsp</result>
+            <result name="buyCode" type="redirectAction">order_BuyModule.action</result>
+            <result name="BuyModule">WEB-INF/jsp/BuyModule.jsp</result>
+            <result name="likeCode">WEB-INF/jsp/LikeModule.jsp</result>
+            <allowed-methods>buyCode,ToBuy,BuyModule,IsBuy,AddLikeCode,likeCode,IsLike,DeleteLikeCode</allowed-methods>
+        </action>
+    </package>
+
+</struts>

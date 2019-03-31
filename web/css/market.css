@@ -1,0 +1,46 @@
+.center_right{
+    width: 700px;
+    position: absolute;
+    top: 117px;
+    left: 380px;
+}
+.scoreprice{
+    float: right;
+    margin-right: 10px;
+    position: relative;
+    width: 70px;
+}
+.scoreprice span{
+   font-size: 18px;
+    color: #101010;
+}
+.contextList{
+    position: relative;
+    width: 540px;
+    height: 80px;
+    margin-top: 50px;
+    border: 1px solid #BBBBBB;
+    padding-left: 20px;
+    padding-top: 5px;
+    font-size: 15px;
+    color: #101010;
+    background: #FAF4EA;
+}
+.contextList .codename{
+    font-size: 16px;
+    color: #3F51B5;
+}
+.contextList .rmb{
+    position: absolute;
+    right: -145px;
+    top:30px;
+    font-size: 18px;
+    color: #3F51B5;
+}
+.contextList .language{
+    float: right;
+    margin-right: 30px;
+    margin-top: -25px;
+    font-size: 16px;
+    color: #3F51B5
+}

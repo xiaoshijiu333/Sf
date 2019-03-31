@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- 数据库表与实体类的映射配置 -->
+<hibernate-mapping>
+    <!-- name:实体类的全路径；table:数据库中的表名 -->
+    <class name="model.User" table="user">
+        <!-- id：主键，property：一般属性
+            name：实体类中的属性名；column：数据库表的字段名，若不配置则默认与属性名相同 -->
+        <id name="id" column="id">
+            <!-- 主键自增策略 -->
+            <generator class="native"></generator>
+        </id>
+         <property name="age" column="age"></property>
+        <property name="username" column="username"></property>
+        <property name="password" column="password"></property>
+        <property name="head_image" column="head_image"></property>
+        <property name="nickname" column="nickname"></property>
+        <property name="seller" column="seller"></property>
+        <property name="name" column="name"></property>
+        <property name="sex" column="sex"></property>
+        <property name="birth" column="birth"></property>
+        <property name="address" column="address"></property>
+        <property name="email" column="email"></property>
+        <property name="phone" column="phone"></property>
+        <property name="school" column="school"></property>
+        <property name="self_info" column="self_info"></property>
+        <property name="education" column="education"></property>
+        <property name="collect_num" column="collect_num"></property>
+    </class>
+</hibernate-mapping>

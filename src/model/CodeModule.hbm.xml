@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- 数据库表与实体类的映射配置 -->
+<hibernate-mapping>
+    <!-- name:实体类的全路径；table:数据库中的表名 -->
+    <class name="model.CodeModule" table="codeModule">
+        <!-- id：主键，property：一般属性
+            name：实体类中的属性名；column：数据库表的字段名，若不配置则默认与属性名相同 -->
+        <id name="id" column="id">
+            <!-- 主键自增策略 -->
+            <generator class="native"></generator>
+        </id>
+        <property name="user_id" column="user_id"></property>
+        <property name="code_name" column="code_name"></property>
+        <property name="function" column="function"></property>
+        <property name="price" column="price"></property>
+        <property name="language" column="language"></property>
+        <property name="star" column="star"></property>
+        <property name="code_url" column="code_url"></property>
+        <property name="info" column="info"></property>
+        <property name="code_file" column="code_file"></property>
+        <property name="keyword1" column="keyword1"></property>
+        <property name="keyword2" column="keyword2"></property>
+        <property name="keyword3" column="keyword3"></property>
+        <property name="keyword4" column="keyword4"></property>
+        <property name="public_time" column="public_time"></property>
+
+    </class>
+</hibernate-mapping>

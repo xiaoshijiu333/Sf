@@ -1,0 +1,231 @@
+.center {
+    margin: 120px auto 0;
+    width: 900px;
+    overflow: hidden;
+}
+.center .center_left{
+    float: left;
+    padding-top: 55px;
+    width: 200px;
+}
+.center_left .left_bottom{
+    margin-top: 10px;
+    border-bottom: 1.5px solid #BBBBBB;
+    width: 150px;
+    height: 35px;
+}
+.left_bottom .mes1{
+    height: 23px;
+    width: 23px;
+    margin-left: 15px;
+}
+.left_bottom .mes2{
+    height: 20px;
+    width: 20px;
+    margin-left: 10px;
+}
+.center_left .codeuserimg{
+    width: 150px;
+    height: 150px;
+}
+.center .cenetr_right{
+    float: left;
+    margin-left: 35px;
+}
+
+.center .center_top img {
+    height: 30px;
+    width: 30px;
+    margin-top: -5px;
+}
+
+.center .center_top .penimg {
+    height: 18px;
+    width: 18px;
+    margin-top: -4px;
+    margin-left: 40px;
+}
+.center span {
+    margin-left: 15px;
+    font-size: 23px;
+    color: #464F87;
+}
+
+.center .center_top2 a {
+    font-size: 23px;
+    color: #464F87;
+}
+
+.center .center_top2 a:focus {
+    text-decoration: none;
+}
+
+.center .center_top .Language {
+    font-size: 18px;
+    margin-left: 8px;
+    color: #585656;
+}
+
+.center .center_top2 .description {
+    border: 1px solid #e1e4e8;
+    width: 170px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    color: #101010;
+    font-size: 18px;
+    display: inline-block;
+}
+
+.center .center_top2 .first {
+    border-bottom: 2px solid #CF151B;
+    width: 170px;
+    margin-bottom: 5px;
+}
+
+.center .center_top2 .context {
+    color: #464F87;
+    margin-top: 20px;
+    width: 900px;
+    background: #FEF8EF;
+    font-size: 18px;
+}
+
+.center .center_top2 .context p {
+    display: inline-block;
+    color: #585656;
+    font-size: 13px;
+}
+
+.center .center_top2 .message {
+    padding-top: 20px;
+    width: 785px;
+}
+.center .center_top2 .bottom {
+    margin-top: 20px;
+    width: 795px;
+    font-size: 17px;
+}
+.center .center_top2 .bottom input{
+    height: 30px;
+    width: 670px;
+    border-radius: 10px;
+    border: 1px solid #464F87;
+    outline: none;
+    text-indent: 10px;
+    color: #464F87;
+}
+.center .center_top2 .bottom button{
+    margin-left: 10px;
+    height: 30px;
+    background: #259B24;
+    margin-top: -5px;
+}
+.center .center_top button{
+    margin-left: 440px;
+    height: 30px;
+    background: #464F87;
+    margin-top: -5px;
+}
+.center .center_top2 .context .message2 {
+    padding-top: 20px;
+    width: 785px;
+    text-align: right;
+}
+
+.center .center_top2 .context .message img {
+    margin-left: 8px;
+    width: 35px;
+    border-radius: 70%;
+    height: 35px;
+}
+
+.center .center_top2 .context .message2 img {
+    margin-right: 8px;
+    width: 35px;
+    border-radius: 70%;
+    height: 35px;
+}
+
+.center .center_top2 .context .message span {
+    padding: 0px 5px;
+    border: 1px solid #464F87;
+    border-radius: 10px;
+    margin-left: 10px;
+    font-size: 17px;
+}
+
+.center .center_top2 .context .message2 span {
+    padding: 0px 5px;
+    border: 1px solid #464F87;
+    border-radius: 10px;
+    margin-left: 0px;
+    margin-right: 10px;
+    font-size: 17px;
+}
+
+.center .center_top3 p {
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+.center .center_top3 span {
+    margin-right: 30px;
+    font-size: 18px;
+    margin-left: 25px;
+}
+
+.center .func {
+    background: #F6F5F3;
+    width: 900px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    text-indent: 10px;
+}
+
+.center textarea {
+    font-size: 18px;
+    width: 900px;
+    resize: none;
+    color: #464F87
+}
+
+.center .accept {
+    height: 70px;
+    background: #FEF8EF;
+    width: 700px;
+    float: left;
+}
+
+.center .buy {
+    float: left;
+    height: 65px;
+    width: 160px;
+    background: #3B4161;
+    color: white;
+    border-radius: 7%;
+    margin-left: 40px;
+    text-align: center;
+    line-height: 65px;
+    font-size: 21px;
+}
+
+.center .accept .trans {
+    background: #FEB942;
+    width: 200px;
+    height: 35px;
+    margin-top: 17px;
+    margin-left: 20px;
+    text-align: center;
+    line-height: 35px;
+    float: left;
+    color: black;
+    font-size: 18px;
+}
+.picimg{
+    width: 29px;
+    height: 29px;
+    margin-right: 15px;
+    margin-top: -5px;
+}
