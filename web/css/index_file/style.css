@@ -1,3 +1,6 @@
+@import "../font.css";
+@import "../font2.css";
+
 body{
 	margin:0;
 	padding:0;
@@ -44,7 +47,6 @@ a:focus{
 /*-- banner --*/
 .center-container {
     padding: 2em 0 48em;
-    background: rgba(0, 0, 0, 0.44);
 }
 .w3_agile_header {
     padding: 2em 5em 0 7em;
@@ -83,22 +85,18 @@ a:focus{
     float: left;
 }
 .w3_agileits_logo h1 a{
-    font-size: 1.2em;
-    color: #fff;
+    font-size: 1.18em;
+    color: black;
     display: block;
     text-decoration: none;
-    text-transform: uppercase;
-    font-weight: 700;
-    font-family: 'Pacifico', cursive;
-    letter-spacing:3px;
+    font-family: 'Montserrat', sans-serif;
 }
 .w3_agileits_logo h1 a span{
+    margin-top: 8px;
 	display: block;
     font-size: .3em;
-    font-weight: 600;
-    color:#b9debf;
     position: relative;
-    letter-spacing: 10px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .agileits_w3layouts_banner_info{
@@ -158,9 +156,9 @@ a:focus{
 	border-color:#17a22c;
 }
 .w3_agileits_logo h1 a span {
-    font-size: 0.26em;
+    font-size: 0.5em;
     text-align: center;
-    color: #b9debf;
+    color: #101010;
 }
 .tlinks{text-indent:-9999px;height:0;line-height:0;font-size:0;overflow:hidden;}
 /*-- nav --*/
@@ -475,7 +473,6 @@ li.agileinfo_share {
     text-decoration: none;
     height:52px;
     width: 36px;
-    background: url(../images/left.png) no-repeat 0px 0px;
 }
 .callbacks_nav.next {
     left: auto;
@@ -811,18 +808,6 @@ h3.agile-tittle.two.gal {
 /*-- //services --*/
 /*-- team --*/
 
-.tab1 .team-img-w3-agile{
-	  background: url(../images/t1.jpg)no-repeat 0px 0px;
-}
-.tab2 .team-img-w3-agile{
-	  background: url(../images/t2.jpg)no-repeat 0px 0px;
-}
-.tab3 .team-img-w3-agile{
-	  background: url(../images/t3.jpg)no-repeat 0px 0px;
-}
-.tab4 .team-img-w3-agile{
-	  background: url(../images/t4.jpg)no-repeat 0px 0px;
-}
 .tab1 .team-img-w3-agile,.tab2 .team-img-w3-agile,.tab3 .team-img-w3-agile,.tab4 .team-img-w3-agile{
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -893,7 +878,6 @@ li.agileinfo_share.team {
 /*-- //team --*/
 /*-- news --*/
 .wthree-almubimg {
-      background: url(../images/g4.jpg)no-repeat center;
     background-size: cover;
     min-height: 435px;
     -webkit-transition: all 3s;
@@ -912,7 +896,6 @@ li.agileinfo_share.team {
     -ms-transition: 0.5s all;
 }
 .wthree-almubimg.wthree1-almubimg {
-    background: url(../images/g5.jpg)no-repeat center;
     background-size: cover;
 }
 .news-left, .news1-right {
@@ -1289,7 +1272,6 @@ color: #111 !important;
 .map {
     -webkit-filter: grayscale(100%);
     -moz-filter: grayscale(100%);
-    -ms-filter: grayscale(100%);
     -o-filter: grayscale(100%);
     filter: grayscale(100%);
 }
