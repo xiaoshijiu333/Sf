@@ -30,8 +30,16 @@
     <div data-vide-bg="video/divining">
         <div class="center-container">
             <div class="w3_agile_header">
-                <div class="w3_agileits_logo">
-                    <h1><a href="index.html"><b>Software Factory</b><span>Rapid development</span></a></h1>
+                <div class="w3_agileits_logo clearfix">
+                    <h1><a href="index.html">
+                        <div class="img">
+                            <img src="images/sanjiao.png" alt="">
+                        </div>
+                        <div class="sf">
+                            <b>Software Factory</b>
+                            <span>Rapid development</span>
+                        </div>
+                    </a></h1>
                 </div>
                 <div class="w3_menu">
                     <div class="agileits_w3layouts_banner_info">
@@ -55,7 +63,8 @@
                             <li><a href="#project" onclick="window.location = 'code_Creatrep.action' " class="scroll">Project</a>
                             </li>
                             <li><a href="#login" onclick="window.location = 'login.html' " class="scroll">Login</a></li>
-                            <li><a href="#registe" onclick="window.location = 'registe.html' " class="scroll">Regist</a></li>
+                            <li><a href="#registe" onclick="window.location = 'registe.html' " class="scroll">Regist</a>
+                            </li>
                             <li><a href="#person" onclick="window.location = 'code_myModule.action' " class="scroll">Personal</a>
                             </li>
                             <li><a href="#contact" class="scroll">Contact</a></li>
@@ -63,6 +72,14 @@
                     </nav>
                 </div>
                 <div class="clearfix"></div>
+            </div>
+            <div class="newtext">
+                <p class="firstp">Normalized code repository</p>
+                <p>Intelligent code matching</p>
+                <p>and recommendation</p>
+                <p>Outsourcing project diversification</p>
+                <p>options</p>
+                <p>A rapidly developing compiler</p>
             </div>
             <!-- banner-text -->
             <div class="slider">
@@ -91,6 +108,16 @@
                         </li>
                     </ul>
                 </div>
+            </div>
+
+            <div class="newtext">
+                <p class="firstp">Designed for developers</p>
+                <p>and computer learners</p>
+            </div>
+
+            <div class="newtext thrid">
+                <p class="acceptp">ACCEPT ID</p>
+                <a href="code_myModule.action"><p>Begin your journey of learning now</p></a>
             </div>
 
             <!--banner Slider starts Here-->
@@ -123,7 +150,8 @@
                     <div class="col-sm-1"><img src="images/upload.png" alt=""></div>
                     <div class="col-sm-11 context">
                         <h2>Normalized code repository</h2>
-                        <p>All the code provided on the platform has been standardized and encapsulated in a unified way,
+                        <p>All the code provided on the platform has been standardized and encapsulated in a unified
+                            way,
                             which ensures the high quality and reproducibility of the code resources</p>
                     </div>
                 </li>
@@ -131,7 +159,8 @@
                     <div class="col-sm-1"><img src="images/bell.png" alt=""></div>
                     <div class="col-sm-11 context">
                         <h2>Intelligent code matching and recommendation</h2>
-                        <p>The platform introduces artificial intelligence technology and provides intelligent service for
+                        <p>The platform introduces artificial intelligence technology and provides intelligent service
+                            for
                             users based on deep neural network learning. In search of the relevant code,
                             it will automatically match the most appropriate code, in time to find the failure,
                             and it will be able to quickly assemble the user's code from the existing code base</p>
@@ -149,7 +178,8 @@
                         <h2>Outsourcing project diversification options</h2>
                         <p>Both IT practitioners with work experience and college students majoring in computer can
                             participate in the outsourcing and competition of various famous enterprises and get rich
-                            rewards. Even the IT novice can find interesting projects here to improve the programming ability</p>
+                            rewards. Even the IT novice can find interesting projects here to improve the programming
+                            ability</p>
                     </div>
                 </li>
                 <li class="clearfix">
@@ -437,11 +467,11 @@
             $('.mobile-menu').toggleClass('mobile-menu--open');
             return false;
         });
-        var width=$("#img1").width();
-        width=parseInt(width)/1.6;
+        var width = $("#img1").width();
+        width = parseInt(width) / 1.6;
         $("#img1").height(width);
-        var width=$("#img2").width();
-        width=parseInt(width)/1.6;
+        var width = $("#img2").width();
+        width = parseInt(width) / 1.6;
         $("#img2").height(width);
     });
 </script>
