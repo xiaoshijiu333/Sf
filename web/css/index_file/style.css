@@ -59,7 +59,7 @@ a:focus {
 }
 
 .w3_agile_header {
-    padding: 2em 5em 0 5em;
+    padding: 2em 5em 0 4em;
 }
 
 .w3_agile_header_left {
@@ -380,24 +380,25 @@ li.dropdown.act a.w3_icons_act {
 .agileits-banner-info {
     text-align: center;
     margin: 0 auto 0;
+    padding-left: 4em;
 }
 
-.newtext{
-    padding: 1em 11.1em 0;
+.newtext {
+    padding: 1em 7em 0 10em;
 }
 
-.newtext.thrid{
-    margin-top: 4em;
+.newtext.thrid {
+    margin-top: 2.5em;
 }
 
-.newtext p{
+.newtext p {
     margin-top: 8px;
     font-size: 1.1em;
     color: #000;
     font-family: 'Montserrat', sans-serif;
 }
 
-.newtext.thrid .acceptp{
+.newtext.thrid .acceptp {
     color: #AAAAAA;
     font-size: 1.8em;
     font-weight: bold;
@@ -406,6 +407,45 @@ li.dropdown.act a.w3_icons_act {
 
 .firstp:first-letter {
     font-size: 1.4em;
+}
+
+.newtext .leftstart {
+    float: left;
+}
+
+.newtext .rightstart, .rightstart2 {
+    float: right;
+}
+
+.rightstart2 p {
+    text-align: right;
+}
+
+.rightstart2 .righttitle {
+    background: rgba(170,170,170,0.5);
+    text-align: center;
+    color: #777777;
+    width: 180px;
+    height: 55px;
+    line-height: 55px;
+    font-size: 1.25em;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 25px;
+    cursor: pointer;
+}
+
+.newtext .rightstart img {
+    width: 30px;
+}
+
+.rightstart p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    color: #7E786E;
+    text-align: center;
+    font-size: 1.4em;
+    margin-bottom: 15px;
 }
 
 .agileits-banner-info h3 {
@@ -567,27 +607,30 @@ li.agileinfo_share {
 
 .callbacks_nav {
     position: absolute;
-    bottom: 38%;
+    bottom: 32%;
     left: 40px;
     opacity: 0.7;
     z-index: 3;
     text-indent: -9999px;
     overflow: hidden;
     text-decoration: none;
-    height: 37px;
-    width: 120px;
+    height: 50px;
+    width: 250px;
 }
 
 .callbacks_nav.next {
     left: auto;
     background: url(../../images/right4.png);
-    right: 250px;
+    right: 120px;
 }
 
 .callbacks_nav.prev {
     left: auto;
     background: url(../../images/left4.png);
-    left: 245px;
+    left: 107px;
+    height: 60px;
+    width: 310px;
+    bottom: 30%;
 }
 
 #slider3-pager a {
@@ -1752,13 +1795,15 @@ input:-ms-input-placeholder {
     .callbacks_nav {
         bottom: 37%;
     }
-    .callbacks_nav.next{
+
+    .callbacks_nav.next {
         right: 190px;
     }
 
-    .callbacks_nav.prev{
+    .callbacks_nav.prev {
         left: 185px;
     }
+
     .inner_w3l_agile_grids {
         margin-top: 3em;
     }
@@ -1821,7 +1866,6 @@ input:-ms-input-placeholder {
     .agileits-banner-info h3 {
         font-size: 3em;
     }
-
 
     .w3ls-agile-service-grid {
         padding: 3.95em 2em;
