@@ -59,7 +59,7 @@ a:focus {
 }
 
 .w3_agile_header {
-    padding: 2em 5em 0 4em;
+    padding: 2em 5em 0 1.5em;
 }
 
 .w3_agile_header_left {
@@ -217,7 +217,7 @@ a:focus {
 .mobile-nav-button {
     position: fixed;
     margin: 4.5em 0em 0;
-    right: 8%;
+    right: 6.5%;
     top: 0;
     z-index: 9999;
     cursor: pointer;
@@ -380,15 +380,14 @@ li.dropdown.act a.w3_icons_act {
 .agileits-banner-info {
     text-align: center;
     margin: 0 auto 0;
-    padding-left: 4em;
 }
 
 .newtext {
-    padding: 1em 7em 0 10em;
+    padding: 1em 7em 0 8em;
 }
 
 .newtext.thrid {
-    margin-top: 2.5em;
+    margin-top: 1.5em;
 }
 
 .newtext p {
@@ -417,35 +416,36 @@ li.dropdown.act a.w3_icons_act {
     float: right;
 }
 
+.rightstart{
+    margin-right: 40px;
+}
+
 .rightstart2 p {
     text-align: right;
 }
 
 .rightstart2 .righttitle {
-    background: rgba(170,170,170,0.5);
-    text-align: center;
-    color: #777777;
-    width: 180px;
-    height: 55px;
-    line-height: 55px;
-    font-size: 1.25em;
+    text-align: right;
+    color: rgba(119,119,119,0.7);
+    font-size: 1.6em;
     font-weight: bold;
     font-family: 'Montserrat', sans-serif;
     margin-top: 25px;
     cursor: pointer;
+    letter-spacing: 1.5px;
 }
 
 .newtext .rightstart img {
-    width: 30px;
+    width: 27px;
 }
 
 .rightstart p {
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     color: #7E786E;
-    text-align: center;
-    font-size: 1.4em;
-    margin-bottom: 15px;
+    text-align: right;
+    font-size: 2em;
+    margin-bottom: 20px;
 }
 
 .agileits-banner-info h3 {
@@ -472,7 +472,7 @@ li.dropdown.act a.w3_icons_act {
 
 .w3_agileits_social_media {
     float: right;
-    padding: 0 4em 0;
+    padding: 1.8em 1.5em 0;
 }
 
 ul.social-icons3 {
@@ -524,6 +524,7 @@ ul.social-icons3 li a.wthree_dribbble {
 
 ul.social-icons3 li a.wthree_behance {
     background: #91798B;
+    margin-right: 0;
 }
 
 ul.social-icons3 li a:hover {
@@ -607,29 +608,29 @@ li.agileinfo_share {
 
 .callbacks_nav {
     position: absolute;
-    bottom: 32%;
     left: 40px;
     opacity: 0.7;
     z-index: 3;
     text-indent: -9999px;
     overflow: hidden;
     text-decoration: none;
-    height: 50px;
-    width: 250px;
 }
 
 .callbacks_nav.next {
     left: auto;
     background: url(../../images/right4.png);
-    right: 120px;
+    right: 80px;
+    width: 320px;
+    height: 45px;
+    bottom: 37%;
 }
 
 .callbacks_nav.prev {
     left: auto;
     background: url(../../images/left4.png);
-    left: 107px;
+    left: 80px;
     height: 60px;
-    width: 310px;
+    width: 305px;
     bottom: 30%;
 }
 
