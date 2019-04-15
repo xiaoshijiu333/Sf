@@ -176,6 +176,12 @@
     font-size: 14px;
     float: left;
 }
+.repositories-1 .time3 {
+    color: red;
+    font-size: 14px;
+    float: left;
+    margin-left: 30px;
+}
 .repositories-1 .time2 {
     color:#8B8878;
     font-size: 14px;

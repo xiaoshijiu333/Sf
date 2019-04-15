@@ -55,7 +55,7 @@ a:focus {
 
 /*-- banner --*/
 .center-container {
-    padding: 2em 0 3em;
+    padding: 0.5em 0 4.3em;
 }
 
 .w3_agile_header {
@@ -216,7 +216,7 @@ a:focus {
 /*-- menu --*/
 .mobile-nav-button {
     position: fixed;
-    margin: 4.5em 0em 0;
+    margin: 3.1em 0em 0;
     right: 6.5%;
     top: 0;
     z-index: 9999;
@@ -472,7 +472,7 @@ li.dropdown.act a.w3_icons_act {
 
 .w3_agileits_social_media {
     float: right;
-    padding: 1.8em 1.5em 0;
+    padding: 2.2em 1.5em 0;
 }
 
 ul.social-icons3 {
@@ -622,7 +622,7 @@ li.agileinfo_share {
     right: 80px;
     width: 320px;
     height: 45px;
-    bottom: 37%;
+    bottom: 39%;
 }
 
 .callbacks_nav.prev {
@@ -631,7 +631,7 @@ li.agileinfo_share {
     left: 80px;
     height: 60px;
     width: 305px;
-    bottom: 30%;
+    bottom: 29%;
 }
 
 #slider3-pager a {
@@ -1782,7 +1782,7 @@ input:-ms-input-placeholder {
     }
 
     .agileits-banner-info h3 {
-        font-size: 3em;
+        font-size: 2.5em;
     }
 
     .news-right, .news1-left {
@@ -1795,14 +1795,6 @@ input:-ms-input-placeholder {
 
     .callbacks_nav {
         bottom: 37%;
-    }
-
-    .callbacks_nav.next {
-        right: 190px;
-    }
-
-    .callbacks_nav.prev {
-        left: 185px;
     }
 
     .inner_w3l_agile_grids {
@@ -1829,12 +1821,16 @@ input:-ms-input-placeholder {
         left: auto;
         background: rgba(0, 0, 0, 0.64) url(../../images/left.png) no-repeat 2px 8px;
         left: 72px;
+        width: 50px;
+        height: 50px;
     }
 
     .callbacks_nav.next {
         left: auto;
         background: rgba(0, 0, 0, 0.64) url(../../images/right.png) no-repeat 2px 8px;
         left: 111px;
+        width: 50px;
+        height: 50px;
     }
 
     .about_agile_info p {
