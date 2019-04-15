@@ -1,0 +1,49 @@
+以 /im/getCheckedList 查询审核通过的机构列表 为例
+
+服务端
+    /**
+     * @Description 查询审核通过的机构列表
+     * @param queryModel 查询条件对象
+     * @return 操作状态及机构列表数据
+     */
+    @RequestMapping(value = "getCheckedList", method = RequestMethod.POST)
+    @ResponseBody
+
+请求的数据
+	pageNum: 1
+	pageSize: 10
+	institutionName:     空
+
+InstitutionsQueryModel 机构查询模型  继承  QueryModel  查询模型
+
+InstitutionsQueryModel 机构信息
+
+QueryModel  条件查询基类  分页
+
+StringUtils  String工具 主要对 StringUtils 的一些方法进行重写,达到更方便的使用
+
+StringUtils.isBlank() 一次性判断多个或单个对象是否为空
+
+institutionFacade.findCheckedInstitutions() 查询已认证的机构列表 返回PageInfo<InstitutionsModel>
+
+Mybatis逆向工程生产的代码(查询语句):
+Example e = new Example(Institutions.class);
+Criteria c = e.createCriteria();
+c.andNotEqualTo(InstitutionsConstants.INSTITUTION_STATUS, InstitutionsConstants.INSTITUTION_CHECK_PENDING);
+数据库查询条件，InstitutionsConstants.INSTITUTION_STATUS != InstitutionsConstants.INSTITUTION_CHECK_PENDING  and拼接
+
+InstitutionsConstants定义了很多常量，与机构数据库字段保持一致
+InstitutionsConstants.INSTITUTION_STATUS 机构待审核状态
+InstitutionsConstants.INSTITUTION_CHECK_PENDING 机构未审核
+
+e.orderBy(InstitutionsConstants.INSTITUTION_ID).desc(); 查询时按机构id降序
+
+PageInfoConverter.doPage2ModelPage(pageInfo, InstitutionsModel.class);  PageInfo对象的泛型转换
+
+ApiResult 返回信息对象（json对象返回）
+
+
+学到：
+1.能够定义很多基类（工具类，常量类），降低耦合度
+2.Mybatis不写sql查询
+3.Mybatis查询分页插件回顾

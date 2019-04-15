@@ -14,5 +14,4 @@ public class Repertory{
     private String create_date;
     private String modify_date;
     private Integer file_num;
-
 }

@@ -1,0 +1,24 @@
+1.早上使用vscode运行vue前端项目
+	安装cnpm（npm）镜像
+	修改config里面的index.js中的target，表示切换连接地址（注意端口占用问题，直接去掉终端的时候）
+	运行前安装依赖 cnpm install（在有package.json的目录）
+	运行npm run dev
+	成功
+
+
+2.尽量不要给项目加上前缀（项目名）
+
+3.@Reference注入的是分布式中的远程服务对象，@Resource和@Autowired注入的是本地spring容器中的对象。
+
+4.
+	where  （Userid = "11" and pointname = "22"）
+	相当于
+	BasePointsExample.Criteria criteria1 = example.createCriteria();
+	criteria1.andUseridEqualTo("11");
+	criteria1.andPointnameLike("22");
+
+	
+	criteria1.andNotEqualTo("Userid","11")
+	相当于要拼接上 Userid != "11"
+	
+5.服务启动也需要debug

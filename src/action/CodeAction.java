@@ -19,11 +19,9 @@ import service.CodeService;
 import javax.annotation.Resource;
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.text.SimpleDateFormat;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 public class CodeAction extends ActionSupport implements ModelDriven<CodeModule> {
 
@@ -48,19 +46,148 @@ public class CodeAction extends ActionSupport implements ModelDriven<CodeModule>
         return "Creatrep";
     }
 
-    //创建代码仓库
-    public String Saverep() {
+    //创建代码仓库第一步
+    public String CreateProject() {
         User user = (User) ActionContext.getContext().getSession().get("user");
+
         //设置时间
         repertory.setCreate_date(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
         //设置用户的id
         repertory.setUser_id(user.getId());
         //设置文件数量
         repertory.setFile_num(0);
-        System.out.println(repertory);
         //保存到数据库
         codeService.Saverep(repertory);
-        return "Saverep";
+        ActionContext.getContext().getSession().put("repertory", repertory);
+
+        return "CreateProject";
+    }
+
+    //创建代码仓库第二步
+    public String CreateProject2() {
+
+        //定义离线查询语句
+        DetachedCriteria detachedCriteria = DetachedCriteria.forClass(CodeModule.class);
+        User user = (User) ActionContext.getContext().getSession().get("user");
+        if (type != null) {
+            //添加查询条件
+            detachedCriteria.add(Restrictions.eq("language", type));
+        }
+
+        //查一下该用户的最新的三个代码模块
+        List<CodeModule> threeModule = codeService.MyThreeModule(user.getId(), detachedCriteria);
+
+        ActionContext.getContext().getSession().put("threeModule", threeModule);
+        return "CreateProject2";
+    }
+
+    @Setter
+    private File[] uploadfile;
+    @Setter
+    private String[] uploadfileFileName;
+
+    //接收上传的文件夹
+    public String uploadFiles() throws IOException {
+        if (uploadfile != null) {
+            Repertory repertory = (Repertory) ActionContext.getContext().getSession().get("repertory");
+            //新建服务器接受文件的目录(根据仓库id)
+            String realPath = ServletActionContext.getServletContext().getRealPath("/Repertoryfiles/" + repertory.getId());
+            //路径转文件
+            File file = new File(realPath);
+            //如果文件不存在，新建文件夹
+            if (!file.exists()) {
+                file.mkdirs();
+            }
+            for (int i = 0; i < uploadfileFileName.length; i++) {
+                //拼接新文件路径
+                File newFile = new File(realPath + "/" + uploadfileFileName[i]);
+                //把临时文件copy过来
+                FileUtil.copyFile(uploadfile[i], newFile);
+            }
+        }
+        return null;
+    }
+
+    //代码仓库关联的代码文件数组
+    @Setter
+    private String[] codefiles;
+
+    @Setter
+    private String infos;
+
+    //最终（第二步）保存仓库
+    public String Saverep() throws IOException {
+
+        Repertory repertory = (Repertory) ActionContext.getContext().getSession().get("repertory");
+
+        //重新定义info
+        repertory.setInfo(infos);
+
+        //设置文件数量
+        String realPath = ServletActionContext.getServletContext().getRealPath("/Repertoryfiles/" + repertory.getId());
+        String realPath2 = ServletActionContext.getServletContext().getRealPath("/codefile");
+        File file = new File(realPath);
+        //如果文件不存在，新建文件夹
+        if (!file.exists()) {
+            file.mkdirs();
+        }
+
+        //把所有代码文件放到（复制一份）该仓库文件夹下
+        if (codefiles != null) {
+            for (String codefile : codefiles) {
+                //复制文件
+                File newFile = new File(realPath2 + "/" + codefile);
+                File newFile2 = new File(realPath + "/" + codefile);
+                FileUtil.copyFile(newFile, newFile2);
+            }
+        }
+
+        //拿到文件夹下所有文件
+        File[] listFiles = file.listFiles();
+        repertory.setFile_num(listFiles.length);
+
+        //修改时间
+        repertory.setModify_date(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
+
+        //保存更新到数据库
+        codeService.UploadRep(repertory);
+
+        return null;
+    }
+
+    //代码仓库id
+    @Setter
+    private Integer pid;
+
+    //查询单个代码仓库
+    public String proDetail() {
+        //根据id查询代码仓库
+        Repertory repertoryById = codeService.queryProById(pid);
+        //info和id存到域中（id为了后期加载文件内容）
+        ActionContext.getContext().getSession().put("repertoryById", repertoryById);
+        //获取文件
+        String realPath = ServletActionContext.getServletContext().getRealPath("/Repertoryfiles/" + pid);
+        File file = new File(realPath);
+        //遍历文件夹下所有文件
+        File[] listFiles = file.listFiles();
+        ArrayList<String> filenames = new ArrayList<>();
+        for (File listFile : listFiles) {
+            filenames.add(listFile.getName());
+        }
+        ActionContext.getContext().getSession().put("filenames", filenames);
+        return "proDetail";
+    }
+
+    @Setter
+    private String filename;
+
+    //查看文件详情
+    public String fileDetail() throws Exception {
+        String realPath = ServletActionContext.getServletContext().getRealPath("/Repertoryfiles/" + pid + "/" + filename);
+        //加载文件内容
+        String readFile = codeService.ReadFile(realPath);
+        ActionContext.getContext().getSession().put("readFile", readFile);
+        return "fileDetail";
     }
 
     //进入创建代码模块界面
@@ -332,7 +459,7 @@ public class CodeAction extends ActionSupport implements ModelDriven<CodeModule>
             //分页查询个人project(private)
             PageBean<Repertory> repertories = codeService.project2(user.getId(), currentPage);
             ActionContext.getContext().getSession().put("repertories", repertories);
-        }else {
+        } else {
             //分页查询个人project(public)
             PageBean<Repertory> repertories = codeService.project(user.getId(), currentPage);
             ActionContext.getContext().getSession().put("repertories", repertories);
