@@ -132,7 +132,7 @@
             <!--个人代码模块-->
             <c:forEach items="${repertories.pageList}" var="pro">
                 <div class="repositories-1" style="height:95px">
-                    <a href="">${pro.name}</a>
+                    <a href="code_proDetail.action?pid=${pro.id}">${pro.name}</a>
                         <%--防止功能描述过长--%>
                     <c:choose>
                         <c:when test="${f:length(pro.info)>30}">
@@ -144,7 +144,8 @@
                                     ${pro.info}</p>
                         </c:otherwise>
                     </c:choose>
-                    <p class="time">${pro.create_date}</p>
+                    <p class="time">${pro.modify_date}</p>
+                    <p class="time3">${pro.file_num}个文件</p>
                 </div>
             </c:forEach>
             <div class="pagepage">

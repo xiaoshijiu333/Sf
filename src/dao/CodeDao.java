@@ -240,4 +240,27 @@ public class CodeDao extends HibernateDaoSupport {
         List<Repertory> list = (List<Repertory>) this.getHibernateTemplate().findByCriteria(detachedCriteria, index, pageSize);
         return list;
     }
+
+    //查询自己的最新三个代码模块
+    public List<CodeModule> MyThreeModule(Integer user_id,DetachedCriteria detachedCriteria) {
+        detachedCriteria.add(Restrictions.eq("user_id", user_id));
+        List<CodeModule> list = (List<CodeModule>) this.getHibernateTemplate().findByCriteria(detachedCriteria, 0, 3);
+        return list;
+    }
+
+    //更新代码仓库
+    public void updateRep(Repertory repertory) {
+        this.getHibernateTemplate().update(repertory);
+    }
+
+    //根据id查询代码仓库
+    public Repertory queryProById(Integer pid) {
+        DetachedCriteria detachedCriteria = DetachedCriteria.forClass(Repertory.class);
+        detachedCriteria.add(Restrictions.eq("id", pid));
+        List<Repertory> list = (List<Repertory>)this.getHibernateTemplate().findByCriteria(detachedCriteria);
+        if (list.size() > 0) {
+            return list.get(0);
+        }
+        return null;
+    }
 }

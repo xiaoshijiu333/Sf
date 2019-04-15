@@ -238,4 +238,19 @@ public class CodeService {
         pageBean.setPageList(repertories);
         return pageBean;
     }
+
+    //查询自己的最新三个代码模块
+    public List<CodeModule> MyThreeModule(Integer user_id,DetachedCriteria detachedCriteria){
+        return codeDao.MyThreeModule(user_id,detachedCriteria);
+    }
+
+    //更新代码仓库
+    public void UploadRep(Repertory repertory) {
+        codeDao.updateRep(repertory);
+    }
+
+    //根据id查询代码仓库
+    public Repertory queryProById(Integer pid) {
+        return codeDao.queryProById(pid);
+    }
 }

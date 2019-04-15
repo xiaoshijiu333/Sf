@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
          pageEncoding="utf-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib prefix="s" uri="/struts-tags" %>
 <html>
 <head>
     <title>Create a new repository</title>
@@ -83,7 +82,7 @@
         <h2>Create a new repository</h2>
         <p>A repository contains all the files for your project, including the revision history</p>
     </div>
-    <form action="code_Saverep.action" method="post" id="Saverepertorie">
+    <form action="code_CreateProject.action" method="post" id="Saverepertorie">
         <div class="center_top2">
             <div class="div">
                 <p>Owner</p>
